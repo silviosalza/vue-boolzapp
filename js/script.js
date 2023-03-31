@@ -170,6 +170,9 @@ createApp({
   },
 
   methods: {
+    contactClicked(){
+        console.log("ciao");
+    }
 
 
 

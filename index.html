@@ -10,7 +10,10 @@
 <body>
     <div id="app">
         <div class="wrapper">
+
+            <!--* CONTACT/SEARCH SECTION -->
             <div class="left-col">
+                <!-- header -->
                 <div class="header-left">
                     <div class="user">
 
@@ -19,14 +22,18 @@
 
                     </div>
                 </div>
+                <!-- notification section -->
                 <div class="notif">
 
                 </div>
+                <!-- input search -->
                 <input class="search" type="text" placeholder="Cerca o inizia una nuova chat"/>
+
+                <!-- contact list -->
                 <div class="contact-list">
                     <ul>
                         <li v-for="(contact, index) in contacts">
-                            <div class="contact">
+                            <div class="contact" @click = "contactClicked">
                                 <img :src="`./img/avatar${contact.avatar}.jpg`" alt="">
                                 <span class="name">{{contact.name}}</span>
                             </div>
@@ -36,14 +43,25 @@
                         </li>
                     </ul>
                 </div>
-
-
-
-
-
-
             </div>
+            <!-- *--------------------------------------------->
+            <!-- * MESSAGE SECTION -->
             <div class="right-col">
+                <div class="header-right">
+                    <div class="contact-status">
+                        
+                    </div>
+                    <div class="general-option">
+
+                    </div>
+                </div>
+                <div class="msg-window">
+
+                </div>
+                <div class="footer-right">
+
+                    
+                </div>
 
             </div>
    
