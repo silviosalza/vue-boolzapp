@@ -47,7 +47,9 @@
                 <!-- contact list -->
                 <div class="contact-list">
                     <ul>
-                        <li v-for="(contact, index) in contacts">
+                        <li v-for="(contact, index) in contacts" :class=" contact.isHovering === true? 'active' : ''"
+                        @mouseover="contact.isHovering = true" 
+                        @mouseout="contact.isHovering = false" >
                             <div class="contact d-flex just-start" @click = "contactClicked">
                                 <img :src="`./img/avatar${contact.avatar}.jpg`" alt="">
                                 <div class="contact-details d-flex just-bet">
@@ -68,6 +70,7 @@
             </div>
             <!-- *--------------------------------------------->
             <!-- * MESSAGE SECTION -->
+            <!-- message header -->
             <div class="right-col">
                 <div class="header-right d-flex">
                     <div class="contact-status d-flex">
@@ -77,10 +80,15 @@
                             <div class="last-seen">Ultimo accesso oggi alle 12:00</div>
                         </div>
                     </div>
-                    <div class="general-option">
+                    <div class="general-option d-flex just-end">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+
 
                     </div>
                 </div>
+                <!-- message window -->
                 <div class="msg-window">
 
                 </div>

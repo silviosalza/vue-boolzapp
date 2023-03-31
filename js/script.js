@@ -4,9 +4,11 @@ createApp({
   data() {
     return {
         
+        
         contacts: [
             {
                 name: 'Michele',
+                isHovering: false, 
                 avatar: '_1',
                 visible: true,
                 messages: [
@@ -30,6 +32,7 @@ createApp({
             {
                 name: 'Fabio',
                 avatar: '_2',
+                isHovering: false, 
                 visible: true,
                 messages: [
                     {
@@ -52,6 +55,7 @@ createApp({
             {
                 name: 'Samuele',
                 avatar: '_3',
+                isHovering: false,
                 visible: true,
                 messages: [
                     {
@@ -74,6 +78,7 @@ createApp({
             {
                 name: 'Alessandro B.',
                 avatar: '_4',
+                isHovering: false,
                 visible: true,
                 messages: [
                     {
@@ -91,6 +96,7 @@ createApp({
             {
                 name: 'Alessandro L.',
                 avatar: '_5',
+                isHovering: false,
                 visible: true,
                 messages: [
                     {
@@ -108,6 +114,7 @@ createApp({
             {
                 name: 'Claudia',
                 avatar: '_6',
+                isHovering: false,
                 visible: true,
                 messages: [
                     {
@@ -130,6 +137,7 @@ createApp({
             {
                 name: 'Federico',
                 avatar: '_7',
+                isHovering: false,
                 visible: true,
                 messages: [
                     {
@@ -147,6 +155,7 @@ createApp({
             {
                 name: 'Davide',
                 avatar: '_8',
+                isHovering: false,
                 visible: true,
                 messages: [
                     {
@@ -172,6 +181,7 @@ createApp({
 
 
   methods: {
+    
     contactClicked(){
         console.log("ciao");
     }
