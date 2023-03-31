@@ -170,6 +170,7 @@ createApp({
     }
   },
 
+
   methods: {
     contactClicked(){
         console.log("ciao");
@@ -180,5 +181,7 @@ createApp({
 
 
     
-  }
+  },
+
+
 }).mount('#app')
