@@ -23,17 +23,23 @@ body {
 .just-cent{
     justify-content: center;
 }
+.just-start{
+    align-items: start;
+}
+.just-bet{
+    justify-content: space-between;
+}
 
 /* Macro Layout */
 .wrapper{
-    width: 1200px;
+    width: 80vw;
     margin: 0 auto;
     background-color: white;
     height: 90vh;
     vertical-align: middle;
     position: absolute;
     top: 5%;
-    left: calc(50% - 600px);
+    left: calc(50% - (80vw / 2));
     display: flex;
 }
 
@@ -65,7 +71,7 @@ body {
 }
 .user img{
     border-radius: 50%;
-    width: 25%;
+    width: 20%;
     margin: 0 0.5rem;
 }
 
@@ -99,12 +105,25 @@ body {
 .bell-circle i{
     font-size: 1.5rem;
 }
+
+/* search section */
 .search{
-    width: calc(100% - 8px);
+    width: calc(100%);
     height: 40px;
-    border-radius: 5px;
-    margin: 5px; 
+    border: 0;
+    
 }
+.search-sect{
+    border: #bfbfbf 1px solid;
+    margin: 5px;
+}
+.search-sect i{
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    padding: 0 1rem;
+}
+
+/* contact list */
 
 .contact-list li{
     list-style: none;
@@ -115,8 +134,29 @@ body {
 }
 .contact-list{
     overflow-y: scroll;
+    height: calc(100% - 192px);
 }
+.contact-details{
+    padding-top: 0.7rem;
+    width: 100%;
+}
+.name{
+    font-weight: 600;
+}
+.last-msg{
+    padding-top: 0.4rem;
+    font-weight: 100;
+    font-size: 0.8rem;
+    color: #ababab;
+}
+
 /*Right Col Layout */
+
+/* header right */
+.contact-status img{
+    width: 9%;
+    border-radius: 50%;
+}
 
 .msg-window{
     background-image:url(../img/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png);

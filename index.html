@@ -39,18 +39,32 @@
 
                 </div>
                 <!-- input search -->
-                <input class="search" type="text" placeholder="Cerca o inizia una nuova chat"/>
+                <div class="search-sect d-flex">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input class="search" type="text" placeholder="Cerca o inizia una nuova chat"/>
+                </div>
 
                 <!-- contact list -->
                 <div class="contact-list">
                     <ul>
                         <li v-for="(contact, index) in contacts">
-                            <div class="contact" @click = "contactClicked">
+                            <div class="contact d-flex just-start" @click = "contactClicked">
                                 <img :src="`./img/avatar${contact.avatar}.jpg`" alt="">
-                                <span class="name">{{contact.name}}</span>
-                            </div>
-                            <div class="last-msg-date">
+                                <div class="contact-details d-flex just-bet">
+                                    <div>
+                                        <span class="name">{{contact.name}}</span>
+                                        <!-- <div 
+                                        class="last-msg" 
+                                        v-for="(element, index) in contact.messages[].messa">{{element[messages.length-1].message}}
+                                        </div> -->
+                                        <div class="last-msg" >{{contact.messages[contact.messages.length - 1].message}}</div>
+                                        
+                                    </div>
+                                    <div class="last-msg-h">
+                                        {{contact.messages[contact.messages.length - 1].date}}
+                                    </div>
 
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -59,9 +73,13 @@
             <!-- *--------------------------------------------->
             <!-- * MESSAGE SECTION -->
             <div class="right-col">
-                <div class="header-right">
-                    <div class="contact-status">
-                        
+                <div class="header-right d-flex">
+                    <div class="contact-status d-flex">
+                        <img src="./img/avatar_1.jpg" alt="">
+                        <div>
+                            <span class="name">Michele</span>
+                            <div class="last-seen">Ultimo accesso oggi alle 12:00</div>
+                        </div>
                     </div>
                     <div class="general-option">
 
