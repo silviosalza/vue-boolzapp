@@ -1,0 +1,9 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background: linear-gradient(180deg, #009688 10%, #DADBD4 10%);
+    height: 100vh;
+}
