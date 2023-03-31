@@ -8,26 +8,46 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="app">
-        
+    <div id="app">
+        <div class="wrapper">
+            <div class="left-col">
+                <div class="header-left">
+                    <div class="user">
+
+                    </div>
+                    <div class="user-option">
+
+                    </div>
+                </div>
+                <div class="notif">
+
+                </div>
+                <input class="search" type="text" placeholder="Cerca o inizia una nuova chat"/>
+                <div class="contact-list">
+                    <ul>
+                        <li v-for="(contact, index) in contacts">
+                            <div class="contact">
+                                <img :src="`./img/avatar${contact.avatar}.jpg`" alt="">
+                                <span class="name">{{contact.name}}</span>
+                            </div>
+                            <div class="last-msg-date">
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
 
 
 
 
 
+            </div>
+            <div class="right-col">
 
-
-
-
-
-
-
-
-
-
-
-
+            </div>
+   
+        </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="js/script.js"></script>
