@@ -50,7 +50,7 @@
                         <li v-for="(contact, index) in contacts" :class=" contact.isHovering === true? 'active' : ''"
                         @mouseover="contact.isHovering = true" 
                         @mouseout="contact.isHovering = false" >
-                            <div class="contact d-flex just-start" @click = "contactClicked">
+                            <div class="contact d-flex just-start" @click = "contactClicked(index)">
                                 <img :src="`./img/avatar${contact.avatar}.jpg`" alt="">
                                 <div class="contact-details d-flex just-bet">
                                     <div>
@@ -74,9 +74,9 @@
             <div class="right-col">
                 <div class="header-right d-flex">
                     <div class="contact-status d-flex">
-                        <img src="./img/avatar_1.jpg" alt="">
+                        <img :src="`./img/avatar${contacts[activeIndex].avatar}.jpg`" alt="">
                         <div>
-                            <span class="name">Michele</span>
+                            <span class="name">{{contacts[activeIndex].name}}</span>
                             <div class="last-seen">Ultimo accesso oggi alle 12:00</div>
                         </div>
                     </div>
@@ -90,6 +90,19 @@
                 </div>
                 <!-- message window -->
                 <div class="msg-window">
+                    <div class="message-row send" v-for="(message,index) in contacts[activeIndex].messages">
+                        <div class="message" >
+                            <p>{{contacts[activeIndex].messages[index].message}}</p>
+                        </div>
+                    </div>
+
+                    <div class="message-row recieved">
+                        <div class="message">
+                            <p></p>
+                        </div>
+                    </div>
+
+
 
                 </div>
                 <div class="footer-right d-flex just-cent">

@@ -4,7 +4,7 @@ createApp({
   data() {
     return {
         
-        
+        activeIndex: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -182,8 +182,8 @@ createApp({
 
   methods: {
     
-    contactClicked(){
-        console.log("ciao");
+    contactClicked(index){
+        this.activeIndex = index
     }
 
 
