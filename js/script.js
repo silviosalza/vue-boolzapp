@@ -19,7 +19,7 @@ createApp({
                     },
                     {
                         date: '10/01/2020 15:50:00',
-                        message: 'Ricordati di stendere i panni',
+                        message: 'Ricordati di stendere i panni che oggi è una bella gioarnata così asciugano più in fretta',
                         status: 'sent'
                     },
                     {

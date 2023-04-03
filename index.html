@@ -55,11 +55,11 @@
                                 <div class="contact-details d-flex just-bet">
                                     <div>
                                         <span class="name">{{contact.name}}</span>
-                                        <div class="last-msg" >{{contact.messages[contact.messages.length - 1].message}}</div>
+                                        <div class="last-msg" >{{contact.messages[contact.messages.length - 1].message.slice(0,20)}}</div>
                                         
                                     </div>
                                     <div class="last-msg-h">
-                                        {{contact.messages[contact.messages.length - 1].date}}
+                                        {{contact.messages[contact.messages.length - 1].date.slice(-8)}}
                                     </div>
 
                                 </div>
@@ -90,21 +90,14 @@
                 </div>
                 <!-- message window -->
                 <div class="msg-window">
-                    <div class="message-row send" v-for="(message,index) in contacts[activeIndex].messages">
-                        <div class="message" >
-                            <p>{{contacts[activeIndex].messages[index].message}}</p>
+                    <div class="message-row clearfix" v-for="(message,index) in contacts [activeIndex].messages" >
+                        <div class="message"
+                        :class = "message.status === 'sent' ? 'send' : 'recieved'">
+                            {{contacts[activeIndex].messages[index].message}}
                         </div>
                     </div>
-
-                    <div class="message-row recieved">
-                        <div class="message">
-                            <p></p>
-                        </div>
-                    </div>
-
-
-
                 </div>
+
                 <div class="footer-right d-flex just-cent">
                     <i class="fa-solid fa-face-smile"></i>
                     <input class="send-msg" type="text" placeholder="Scrivi un messaggio"/>
