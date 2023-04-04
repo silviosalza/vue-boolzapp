@@ -41,25 +41,26 @@
                 <!-- input search -->
                 <div class="search-sect d-flex">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input class="search" type="text" placeholder="Cerca o inizia una nuova chat"/>
+                    <input class="search" type="text" placeholder="Cerca o inizia una nuova chat" v-model="search"/>
                 </div>
 
                 <!-- contact list -->
                 <div class="contact-list">
                     <ul>
-                        <li v-for="(contact, index) in contacts" :class=" contact.isHovering === true? 'active' : ''"
+                        <li v-for="(contact,index) in filteredItems" :class=" contact.isHovering === true? 'active' : ''"
                         @mouseover="contact.isHovering = true" 
-                        @mouseout="contact.isHovering = false" >
+                        @mouseout="contact.isHovering = false" 
+                        >
                             <div class="contact d-flex just-start" @click = "contactClicked(index)">
                                 <img :src="`./img/avatar${contact.avatar}.jpg`" alt="">
                                 <div class="contact-details d-flex just-bet">
                                     <div>
                                         <span class="name">{{contact.name}}</span>
-                                        <div class="last-msg" >{{contact.messages[contact.messages.length - 1].message.slice(0,20)}}</div>
+                                        <div class="last-msg" >{{contact.messages[contact.messages.length - 1].message.slice(0,20)}}...</div>
                                         
                                     </div>
                                     <div class="last-msg-h">
-                                        {{contact.messages[contact.messages.length - 1].date.slice(-8)}}
+                                        {{contact.messages[contact.messages.length - 1].date.slice(-8,-3)}}
                                     </div>
 
                                 </div>
@@ -84,6 +85,7 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <i class="fa-solid fa-paperclip"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i>
+                        
 
 
                     </div>
@@ -94,13 +96,15 @@
                         <div class="message"
                         :class = "message.status === 'sent' ? 'send' : 'recieved'">
                             {{contacts[activeIndex].messages[index].message}}
+                            <h6 class="date-right">{{contacts[activeIndex].messages[index].date.slice(-8,-3)}}</h6>
+
                         </div>
                     </div>
                 </div>
 
                 <div class="footer-right d-flex just-cent">
                     <i class="fa-solid fa-face-smile"></i>
-                    <input class="send-msg" type="text" placeholder="Scrivi un messaggio"/>
+                    <input class="send-msg" type="text" v-model="text" placeholder="Scrivi un messaggio" @keyup.enter="newMsg"/>
                     <i class="fa-solid fa-microphone"></i>
                 </div>
 

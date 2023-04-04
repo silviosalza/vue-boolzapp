@@ -191,8 +191,6 @@ body {
     flex-direction: column;
  
 }
-
-
 .message-row{
     padding: 0.5rem;
 }
@@ -200,26 +198,27 @@ body {
 .message{
     padding: 0.5rem;
     border-radius: 7px;
-    
+    min-width: 40%;   
+    max-width: 50%; 
+    word-wrap: break-word;
 }
 
 .send{
     background-color: white; 
-    min-width: 40%;   
-    max-width: 60%; 
     box-shadow: 2px 2px gray;
     float: right; 
 }
 .recieved {
     background-color: lightgreen; 
-    min-width: 40%;   
-    max-width: 60%;
     box-shadow: 2px 2px gray;
 }
 .clearfix::after{
     content: "";
     display:table;
     clear:both;
+}
+.date-right{
+    text-align: end;
 }
 
 

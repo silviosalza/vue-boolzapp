@@ -3,7 +3,7 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
-        
+        search: '',
         activeIndex: 0,
         contacts: [
             {
@@ -24,7 +24,7 @@ createApp({
                     },
                     {
                         date: '10/01/2020 16:15:22',
-                        message: 'Tutto fatto!',
+                        message: 'Tutto fattooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
                         status: 'received'
                     }
                 ],
@@ -176,22 +176,53 @@ createApp({
                 ],
             }
         ],
+        //gestisco oggetti di input/output
+        text: "",
+        myMsg: {
+            date: "",
+            message: "",
+            status: 'received'
+        },
+        userMsg:{
+            date: "",
+            message: 'Ok nessun problema',
+            status: 'sent'
+        }
     }
   },
 
 
   methods: {
-    
+
+    // msgHour(){
+    //     let msgH = new Date()
+    //     this.myMsg.date = this.msgH
+    //     console.log(this.myMsg.date);
+    // },
     contactClicked(index){
         this.activeIndex = index
-    }
+    },
+    userAnswer(){
+        this.contacts[this.activeIndex].messages.push(this.userMsg)
+    },
 
+    newMsg(){
+        this.myMsg.message = this.text
+        this.contacts[this.activeIndex].messages.push({
+            ...this.myMsg
 
-
-
-
-    
+        })
+        setTimeout(this.userAnswer,1000)
+        this.text=""
+    },
   },
+  computed: {
+    filteredItems() {
+      return this.contacts.filter(contact => {
+         return contact.name.toLowerCase().indexOf(this.search.toLowerCase()) > -1
+      })
+    }
+  }
 
 
 }).mount('#app')
