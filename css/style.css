@@ -205,12 +205,12 @@ body {
 
 .send{
     background-color: white; 
-    box-shadow: 2px 2px gray;
-    float: right; 
+    box-shadow: 2px 2px gray
 }
 .recieved {
     background-color: lightgreen; 
     box-shadow: 2px 2px gray;
+    float: right; 
 }
 .clearfix::after{
     content: "";

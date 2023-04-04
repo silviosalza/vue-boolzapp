@@ -207,13 +207,15 @@ createApp({
     },
 
     newMsg(){
-        this.myMsg.message = this.text
-        this.contacts[this.activeIndex].messages.push({
-            ...this.myMsg
+        if(this.text.length > 0){
+            this.myMsg.message = this.text
+            this.contacts[this.activeIndex].messages.push({
+                ...this.myMsg
+            })
+            setTimeout(this.userAnswer,1000)
+            this.text=""
 
-        })
-        setTimeout(this.userAnswer,1000)
-        this.text=""
+        }
     },
   },
   computed: {
