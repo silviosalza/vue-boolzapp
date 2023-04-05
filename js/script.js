@@ -179,7 +179,7 @@ createApp({
         //gestisco oggetti di input/output
         text: "",
         myMsg: {
-            date: "",
+            date:  "",
             message: "",
             status: 'received'
         },
@@ -193,28 +193,35 @@ createApp({
 
 
   methods: {
+      
+      contactClicked(index){
+          this.activeIndex = index
+      },
+    getDate(){
+         let currentDate = new Date().toString().slice(0,24)
+         this.myMsg.date = currentDate
+         
+     },
+     getAnswerDate(){
+         let currentAnswerDate = new Date().toString().slice(0,24)
+         this.userMsg.date = currentAnswerDate
+         
+     },
 
-    // msgHour(){
-    //     let msgH = new Date()
-    //     this.myMsg.date = this.msgH
-    //     console.log(this.myMsg.date);
-    // },
-    contactClicked(index){
-        this.activeIndex = index
-    },
     userAnswer(){
+        this.getAnswerDate()
         this.contacts[this.activeIndex].messages.push(this.userMsg)
     },
 
     newMsg(){
         if(this.text.length > 0){
             this.myMsg.message = this.text
+            this.getDate()
             this.contacts[this.activeIndex].messages.push({
                 ...this.myMsg
             })
             setTimeout(this.userAnswer,1000)
             this.text=""
-
         }
     },
   },
@@ -225,6 +232,5 @@ createApp({
       })
     }
   }
-
 
 }).mount('#app')

@@ -96,7 +96,9 @@
                         <div class="message"
                         :class = "message.status === 'sent' ? 'send' : 'recieved'">
                             {{contacts[activeIndex].messages[index].message}}
-                            <h6 class="date-right">{{contacts[activeIndex].messages[index].date.slice(-8,-3)}}</h6>
+                            <h6 class="date-right">
+                                {{contacts[activeIndex].messages[index].date.slice(-8,-3)}}
+                            </h6>
 
                         </div>
                     </div>
